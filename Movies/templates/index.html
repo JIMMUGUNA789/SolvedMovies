@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for movie in data.results %}
+    <h1>{{ movie.title }}</h1>
+    <p>{{movie.overview}}</p>
+    <img src="https://api.themoviedb.org/3/movie/{movie_id}/images?api_key=e963d5906fb1e697a29b91384f06a477" alt="">
+
+
+    {% endfor %}
+    
+    
+</body>
+</html>
