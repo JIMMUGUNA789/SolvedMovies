@@ -1,0 +1,84 @@
+.logo{
+    color: white;
+    display: flex;
+    font-size: 28px;
+    text-shadow: 2px 2px;
+    padding: 6px 180px;
+    
+}
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #089717; */
+  
+  background-image: linear-gradient(to right, #07152b, #1c51a6 );
+
+  
+}
+
+a{
+    color: white;
+  text-decoration: none;
+}
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 30px;
+}
+li{
+    float: right;
+}
+li a:hover{
+    color: goldenrod;
+}
+
+.sign_up{
+    color: white;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    
+}
+.sign_up_div{
+    /* background-color: #089717; */
+    background-image: linear-gradient(to right, #07152b, #1c51a6 );
+    
+}
+.active{
+    color: #F39C12;
+}
+.card-outer{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    
+}
+.card{
+    box-shadow: 0 8px 12px 0 rgba(0,0 ,0,0.4);
+    width: 35%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+

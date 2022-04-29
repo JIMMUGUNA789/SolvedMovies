@@ -1,20 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for movie in data.results %}
-    <h1>{{ movie.title }}</h1>
-    <p>{{movie.overview}}</p>
-    <img src="https://api.themoviedb.org/3/movie/{movie_id}/images?api_key=e963d5906fb1e697a29b91384f06a477" alt="">
+{% load static %}
+{% include 'base.html' %}
+
+{% block content %}
 
 
-    {% endfor %}
+<div class="container">
+    <div class="container-fluid">
+        <div class="row text-center flex-row flex-nowrap pl-4 pr-4">
+            {% for movie in data.results %}
+
+                <div class="card pr-4" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ movie.title }}</h5>
+                        <p class="card-text">{{movie.overview}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>  
+            {% endfor %}
+        
+        </div>
+    </div>
+</div>
+
+
+    {% endblock %}
     
     
-</body>
-</html>
