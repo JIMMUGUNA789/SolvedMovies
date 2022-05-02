@@ -1,29 +1,59 @@
+{% extends 'base.html' %}
 {% load static %}
-{% include 'base.html' %}
 
 {% block content %}
 
 
-<div class="container">
-    <div class="container-fluid">
-        <div class="row text-center flex-row flex-nowrap pl-4 pr-4">
-            {% for movie in data.results %}
 
-                <div class="card pr-4" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ movie.title }}</h5>
-                        <p class="card-text">{{movie.overview}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>  
-            {% endfor %}
+        <div class="container">
+            <div class="container-fluid">
+                <h5>Popular Movies</h5>
+                <div class="row text-center  d-flex flex-row flex-nowrap pl-4 pr-4">
+                  
+                    <!-- {% for movie in popular.results %} -->
+                    {% for movie in items %}
         
+                        <div class="card pr-4" style="width: 18rem;">
+                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ movie.title }}</h5>
+                                <p class="card-text">Release:{{movie.release_date}}</p>
+                                
+                            </div>
+                        </div>  
+                    {% endfor %}
+                
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <h5>Now Playing Movies</h5>
+                <div class="row text-center  d-flex flex-row flex-nowrap pl-4 pr-4">
+                  
+                    {% for movie in now_playing.results %}
+        
+                        <div class="card pr-4" style="width: 18rem;">
+                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ movie.title }}</h5>
+                                <p class="card-text">Release:{{movie.release_date}}</p>
+                                
+                            </div>
+                        </div>  
+                    {% endfor %}
+                
+                </div>
+            </div>
+
+
         </div>
-    </div>
-</div>
+
+        {% endblock %}
+        
+        
+   
 
 
-    {% endblock %}
+  
     
     
