@@ -5,19 +5,56 @@
 
 
 
-        <div class="container">
-            <div class="container-fluid">
-                <h5>Popular Movies</h5>
-                <div class="row text-center  d-flex flex-row flex-nowrap pl-4 pr-4">
+
+        <div class="">
+            <div class="row search-area" >
+                
+                <form action="" method="get">
+                    {% csrf_token %}
+                    <div><p class="search-area-title ">Explore</p></div>
+                    <div><p class="search-area-text">thousands of movies, Tv shows, Series and Documentaries......</p></div>
+                    <div class="search-bar-wrapper">                       
+                        <input type="text" class="search-bar" placeholder="Search movies, tv shows and Documentaries">
+                        <button type="submit" class="button">Search</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="">
+                <br>
+                <h5 class="section-title">Popular Movies</h5>
+                
+                <div class="scroller">
                   
-                    <!-- {% for movie in popular.results %} -->
-                    {% for movie in items %}
+                     {% for movie in popular.results %} 
+                    
         
-                        <div class="card pr-4" style="width: 18rem;">
-                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Card image cap">
+                        <div class="card pr-4 scroller-item" style="width: 14rem; height: 21rem;">
+                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" style="width: 180px; height: 240px; border-radius: 10px;" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">{{ movie.title }}</h5>
-                                <p class="card-text">Release:{{movie.release_date}}</p>
+                                <h6 class="card-title">{{ movie.title }}</h6>
+                                <p class="card-text">Release: {{ movie.release_date }}</p>
+                                
+                            </div>
+                        </div>  
+                    {% endfor %}
+                
+                </div>
+            
+            </div>
+
+            <div class="">
+                <br>
+                <h5 class="section-title">Now Playing Movies</h5>
+                <div class="scroller">
+                  
+                    {% for movie in now_playing.results %}
+        
+                        <div class="card pr-4 scroller-item" style="width: 14rem; height: 21rem;">
+                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" style="width: 180px; height: 240px; border-radius: 10px;" alt="Card image cap">
+                            <div class="card-body">
+                                <h6 class="card-title">{{ movie.title }}</h6>
+                                <p class="card-text">Release: {{ movie.release_date }}</p>
                                 
                             </div>
                         </div>  
@@ -26,29 +63,69 @@
                 </div>
             </div>
 
-            <div class="container-fluid">
-                <h5>Now Playing Movies</h5>
-                <div class="row text-center  d-flex flex-row flex-nowrap pl-4 pr-4">
+            <div class="">
+                <br>
+                <h5 class="section-title">Upcoming</h5>
+                <div class="scroller">
                   
-                    {% for movie in now_playing.results %}
+                    {% for movie in upcoming.results %}
         
-                        <div class="card pr-4" style="width: 18rem;">
-                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Card image cap">
+                        <div class="card pr-4 scroller-item" style="width: 14rem; height: 21rem;">
+                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" style="width: 180px; height: 240px; border-radius: 10px;" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">{{ movie.title }}</h5>
-                                <p class="card-text">Release:{{movie.release_date}}</p>
+                                <h6 class="card-title">{{ movie.title }}</h6>
+                                <p class="card-text">Release: {{ movie.release_date }}</p>
                                 
                             </div>
                         </div>  
                     {% endfor %}
                 
                 </div>
+            </div>
+            <div class="">
+                <br>
+                <h5 class="section-title">Animations</h5>
+                <div class="scroller">
+                  
+                    {% for movie in animations.results %}
+        
+                        <div class="card pr-4 scroller-item" style="width: 14rem; height: 21rem;">
+                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" style="width: 180px; height: 240px; border-radius: 10px;" alt="Card image cap">
+                            <div class="card-body">
+                                <h6 class="card-title">{{ movie.title }}</h6>
+                                <p class="card-text">Release: {{ movie.release_date }}</p>
+                                
+                            </div>
+                        </div>  
+                    {% endfor %}
+                
+                </div>
+            </div>
+            <br>
+
+
+            <div class="row search-area" >
+                <div><p class="search-area-title ">Get in Touch</p></div>
+                <p><i class="fa fal-phone" style="font-size:16px;color:white"></i> +254729825703</p>
+                
+                <form action="" method="get">
+                    {% csrf_token %}
+                   
+                    <div></div>
+                    <div class="search-bar-wrapper">                       
+                        <input type="text" class="" placeholder="Name" required>
+                        <input type="email" class="" placeholder="email" required><br>
+                        <input type="textarea" class="" placeholder="message...." required>
+                        <button type="submit" class="button">Send</button>
+                    </div>
+                </form>
+
             </div>
 
 
         </div>
 
-        {% endblock %}
+        {% endblock content %}
         
         
    

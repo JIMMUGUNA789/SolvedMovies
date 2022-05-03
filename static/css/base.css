@@ -1,11 +1,14 @@
-.logo{
-    color: white;
-    display: flex;
-    font-size: 28px;
-    text-shadow: 2px 2px;
-    padding: 6px 180px;
+body {    
+    margin: 0;
+ 
+ width:100%;
+ max-width:100%;
+}
+.navbar{
+    padding: 0;
     
 }
+
  ul {
   list-style-type: none;
   margin: 0;
@@ -34,19 +37,7 @@ li a:hover{
     color: goldenrod;
 }
 
-.sign_up{
-    color: white;
-    font-size: 20px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    
-}
-.sign_up_div{
-    /* background-color: #089717; */
-    background-image: linear-gradient(to right, #07152b, #1c51a6 );
-    
-}
+
 .active{
     color: #F39C12;
 }
@@ -57,10 +48,11 @@ li a:hover{
     
 }
 .card{
-    box-shadow: 0 8px 12px 0 rgba(0,0 ,0,0.4);
+    box-shadow: 0 8px 12px 0 #1c51a6;
     width: 35%;
     border-radius: 10px 10px 10px 10px;
 }
+
 
 .dropdown {
     position: relative;
@@ -81,5 +73,64 @@ li a:hover{
     display: block;
   }
   
+.search-area{
+
+    background-image: url('/static/moviebackground.jpg');
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    height: 300px;
+    padding: 20px;
+}
+.search-area-title{
+    color: white;
+    padding-left: 150px;
+    font-size: 40px;
+    padding-bottom: 2px;
+
+}
+.search-area-text{
+    color: white;
+    padding-left: 150px;
+    padding-top: 2px;
+    font-size: large;
+}
+.search-bar-wrapper{
+    display: flex;
+    justify-content: center;
+    padding-top: 2px;
+}
+
+.search-bar{
+    width: 75%;
+    border-radius: 30px;
+}
+.button{
+    border-radius: 30px;
+    height: 40px;
+    width: 70px;
+    color: white;
+    background-image: linear-gradient(to right, #07152b, #1c51a6 );
+}
+.scroller{
+    
+    overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+    
+}
+.scroller-item{
+    display: inline-block;
+ 
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+.section-title{
+    padding-left: 40px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 27px;
+}
 
 
