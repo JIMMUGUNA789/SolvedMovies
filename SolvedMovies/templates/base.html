@@ -13,19 +13,61 @@
 </head>
 <body>
     <div class="">
-        <nav class="row navbar navbar-fixed-top">
-            <ul>
-                <li><a href="#sign_up" class="active"><i class="fa fa-user" style="font-size:16px;color:white"></i> Sign Up</a></li>
-                <li><a href="#info">Contact</a></li>
-                <li><a href="#research">About Us </a></li>
-                <li><a href="#about">Trailer <i class="fa fa-angle-down" style="font-size:16px;color:white"></i></a></li>
-                <li><a href="#contact">Free <i class="fa fa-angle-down" style="font-size:16px;color:white"></i></a></li>
-                <li class=""><a href="#news">Trending <i class="fa fa-angle-down" style="font-size:16px;color:white"></i></a></li> 
-                <li><a class="" href="#home">Popular <i class="fa fa-angle-down" style="font-size:16px;color:white"></i>
-                </a></li>        
-                    
-            </ul>
-        </nav>
+        <div class="row main-nav">
+        <div class="col-lg-2 nav-header"><h5>SolvedMovies</h5></div>
+        <div class="navbar1 col-lg-10">
+            
+            <a href="#sign_up" class="active"><i class="fa fa-user" style="font-size:16px;color:white"></i> Sign Up</a>
+            <a href="#contact_us">Contact Us</a>
+            
+            <div class="dropdown1">
+              <button class="dropbtn">Popular
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Streaming</a>
+                <a href="#">On Tv</a>
+                <a href="#">In Theatres</a>
+              </div>
+            </div>
+
+            <div class="dropdown1">
+                <button class="dropbtn">Free
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Movies</a>
+                  <a href="#">Tv Shows</a>
+                  <a href="#">Animations</a>
+                </div>
+              </div>
+
+              <div class="dropdown1">
+                <button class="dropbtn">Trending
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Day</a>
+                  <a href="#">Week</a>
+                  
+                </div>
+              </div>
+
+              <div class="dropdown1">
+                <button class="dropbtn">Trailers
+                    <i class="fa fa-caret-down"></i>
+                  
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Movies</a>
+                  <a href="#">Tv Shows</a>
+                  <a href="#">Animations</a>
+                </div>
+              </div>
+          </div> 
+
+        </div>
+      
 
       {% block content %}
       {% endblock %}

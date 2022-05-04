@@ -104,21 +104,28 @@
             <br>
 
 
-            <div class="row search-area" >
-                <div><p class="search-area-title ">Get in Touch</p></div>
-                <p><i class="fa fal-phone" style="font-size:16px;color:white"></i> +254729825703</p>
+            <div class="row search-area" name="contact_us">
+                <h4 class="section-title"  style="padding-left: 500px; color: white;">Contact Us</h4>
+                <div class="col-md-3"><p class="search-area-text "><u> Keep in touch:</u></p>
+                    <p class="search-area-text" ><i class="fa fa-phone" style="font-size:16px;color:white"></i> +254729825703</p>
+                    <p class="search-area-text" ><i class="fa fa-envelope" style="font-size:15px;color:white"></i>solvedltd@gmail.com</p>
+                </div>
                 
-                <form action="" method="get">
-                    {% csrf_token %}
-                   
-                    <div></div>
-                    <div class="search-bar-wrapper">                       
-                        <input type="text" class="" placeholder="Name" required>
-                        <input type="email" class="" placeholder="email" required><br>
-                        <input type="textarea" class="" placeholder="message...." required>
+                    
+                    
+                    <div class=" col-md-9"> 
+                        <form action="" method="get">
+                        {% csrf_token %}
+                                        
+                       <div style ="padding-bottom: 20px;">
+                        <input type="text" class="" placeholder="Full Name" required style="border-radius: 30px; width: 45%; height: 40px;">
+                        <input type="email" class="" placeholder="E-Mail Address" required style="border-radius: 30px; width: 45%; height: 40px;"><br>
+                       </div>
+                        <textarea class="" placeholder="Your Message" required style="border-radius: 30px; width: 91%; height: 100px; padding: 40px;"></textarea><br>
                         <button type="submit" class="button">Send</button>
+                    </form>
                     </div>
-                </form>
+                
 
             </div>
 
