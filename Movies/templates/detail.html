@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+
+<div class="row detail-background"  >
+    <div class="detail-div">
+       
+
+            <div class=" detail-div1" style="width: 14rem; height: 21rem;">
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movieDetail.poster_path}}" style="width: 18rem; height: 28rem; border-radius: 10px;" alt="Card image cap">
+            
+            
+        </div>
+        
+        <div class="">
+            <p class="search-area-title">{{movieDetail.title}}</p>
+            <p class="search-area-text">Rating: {{movieDetail.vote_average}} <span> <i class="fa fa-play" style="font-size:16px;color:white"></i>Play Trailer</span></p>
+            <p class="search-area-text">{{movieDetail.tagline}} </p>
+            <h4 class="search-area-text">Overview:</h4>
+            <p class="search-area-text">{{movieDetail.overview}}</p>
+        </div>
+    
+
+    </div>
+</div>
+
+<div class="">
+    <br>
+    <h5 class="section-title">Cast</h5>
+    
+    <div class="scroller">
+      
+         {% for detail in movieCast.cast %} 
+         
+        
+
+            <div class="card pr-4 scroller-item" style="width: 12rem; height: 18rem;">
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{detail.profile_path}}" style="width: 150px; height: 200px; border-radius: 10px;" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">{{detail.name}}</h6>
+                    <p class="card-text">{{ detail.character }}</p>
+                    
+                </div>
+            </div> 
+        
+        {% endfor %}
+    
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

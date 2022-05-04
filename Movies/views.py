@@ -10,7 +10,7 @@ def getMovies(request):
     urlPopular = BASE_URL+'popular'+apiKey
     response1 = requests.get(urlPopular)
     popular = response1.json()
-    # print (popular)
+    print(popular)
     
     
 
@@ -46,5 +46,24 @@ def getMovies(request):
         "animations":animations,
     }
     return render(request, 'index.html', context)
+
+
+def details(request, id):
+    strId = str(id)
+    urlDetail = BASE_URL+strId+apiKey
+    response = requests.get(urlDetail)
+    movieDetail = response.json()
+
+    # get cast
+    urlCast = BASE_URL+strId+'/credits'+apiKey
+    response1 = requests.get(urlCast)
+    movieCast = response1.json()
+    print(movieCast)
+    context={
+        "movieDetail":movieDetail,
+        "movieCast":movieCast,
+
+    }
+    return render(request, 'detail.html', context)
 
 

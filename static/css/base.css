@@ -160,3 +160,19 @@ a {
   font-weight: 500;
   font-size: 27px;
 }
+.anchor-text{
+  text-decoration: none;
+  color: black;
+}
+.detail-background {
+  background-image: linear-gradient(to right, #1c51a6, #07152b);  
+  padding: 20px;
+  height:500px;
+  
+  
+}
+.detail-div{
+  display: flex;
+}
+
+
