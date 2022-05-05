@@ -22,7 +22,7 @@ body {
 .navbar1 {
   overflow: hidden;
 
-  padding-left: 535px;
+  padding-left: 450px;
 }
 
 /* Links inside the navbar */
@@ -147,6 +147,8 @@ a {
   white-space: nowrap;
   overflow-y: hidden;
 }
+
+
 .scroller-item {
   display: inline-block;
 
@@ -174,5 +176,8 @@ a {
 .detail-div{
   display: flex;
 }
+
+
+
 
 

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<h5>Trailers</h5>
+{% for trailer in trailers %}
+<video src="https://www.youtube.com/watch?v={{trailer.key}}"></video>
+{% endfor%}
+
+{% endblock %}
