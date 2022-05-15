@@ -22,24 +22,20 @@
             <a href="#contact_us">Contact Us</a>
             
             <div class="dropdown1">
-              <button class="dropbtn">Popular
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="#">Streaming</a>
-                <a href="#">On Tv</a>
-                <a href="#">In Theatres</a>
-              </div>
+              <a class="dropbtn" href="{% url 'getmovies' %}">Home
+                
+              </a>
+              
             </div>
 
             <div class="dropdown1">
-                <button class="dropbtn">Free
+                <button class="dropbtn">Popular
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
                   <a href="#">Movies</a>
                   <a href="#">Tv Shows</a>
-                  <a href="#">Animations</a>
+                  <a href="{% url 'get_animations' %}">Animations</a>
                 </div>
               </div>
 

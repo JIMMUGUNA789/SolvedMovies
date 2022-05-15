@@ -15,7 +15,13 @@
         
         <div class="">
             <p class="search-area-title">{{movieDetail.title}}</p>
-            <p class="search-area-text">Rating: {{movieDetail.vote_average}} <a href="{% url 'trailers' movieDetail.id %}"><span  ><i class="fa fa-play" style="font-size:16px;color:white"></i>Play Trailer</span></a></p>
+            <p class="search-area-text"> {{movieDetail.release_date}} | {{movieDetail.runtime}} mins | 
+                {% for genre in movieDetail.genres  %}
+                <span>{{genre.name}}</span>
+                {% endfor %}
+            </p>
+            <p class="search-area-text">Rating: {{movieDetail.vote_average}} | <a href="{% url 'trailers' movieDetail.id %}" style="color: goldenrod;"><span  ><i class="fa fa-play" style="font-size:16px;color:goldenrod"></i>Play Trailer</span></a></p>
+            <p class="search-area-text">Budget: ${{movieDetail.budget}} | Revenue: ${{movieDetail.revenue}}</p>
             <p class="search-area-text">{{movieDetail.tagline}} </p>
             <h4 class="search-area-text">Overview:</h4>
             <p class="search-area-text">{{movieDetail.overview}}</p>

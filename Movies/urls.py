@@ -6,4 +6,5 @@ urlpatterns = [
     path('detail/<int:id>/', views.details, name='details'),
     path('genre/<int:id>/', views.specificCategory, name='genre'),
     path('trailers/<int:id>/', views.trailer, name='trailers'),
+    path('popular/animations/',views.getAnimations, name='get_animations')
 ]

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="">
+    <br>
+    <h5 class="section-title">Animation</h5>
+    
+    <div class="scroller">
+      
+         {% for movie in animations.results %} 
+         <a href="{% url 'details' movie.id %}" class="anchor-text">
+        
+
+            <div class="card pr-4 scroller-item" style="width: 14rem; height: 21rem;">
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" style="width: 180px; height: 240px; border-radius: 10px;" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">{{ movie.title }}</h6>
+                    <p class="card-text">Release: {{ movie.release_date }}</p>
+                    
+                </div>
+            </div> 
+        </a> 
+        {% endfor %}
+    
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}
