@@ -36,6 +36,7 @@ def getMovies(request):
     urlAnimations = DISCOVER_BASE_URL + apiKey + "&with_genres=16"
     response4 = requests.get(urlAnimations)
     animations = response4.json()
+    # search functionality
 
     context = {
         "popular": popular,
@@ -99,3 +100,46 @@ def getAnimations(request):
     animations = response4.json()
     context = {"animations": animations}
     return render(request, "animations.html", context)
+
+# trending per day
+def getTrendingDay(request):
+    # movie
+    trendingmovieurl = "https://api.themoviedb.org/3/trending/movie/day"+apiKey 
+    response1=requests.get(trendingmovieurl)
+    trendingmovies = response1.json()
+    # tv
+    trendingtvurl = "https://api.themoviedb.org/3/trending/tv/day"+apiKey 
+    response2=requests.get(trendingtvurl)
+    trendingtv = response2.json()
+    # person
+    # trendingpersonurl = "https://api.themoviedb.org/3/person/tv/day"+apiKey 
+    # response3=requests.get(trendingpersonurl)
+    # trendingperson = response3.json()
+    context = {
+        "trendingmovies":trendingmovies,
+        "trendingtv":trendingtv,
+        # "trendingperson":trendingperson,
+    }
+    return render(request, 'trending_day.html', context)
+
+def getTrendingWeek(request):
+    # movie
+    trendingmovieurl = "https://api.themoviedb.org/3/trending/movie/week"+apiKey 
+    response1=requests.get(trendingmovieurl)
+    trendingmovies = response1.json()
+    # tv
+    trendingtvurl = "https://api.themoviedb.org/3/trending/tv/week"+apiKey 
+    response2=requests.get(trendingtvurl)
+    trendingtv = response2.json()
+    # person
+    # trendingpersonurl = "https://api.themoviedb.org/3/person/tv/week"+apiKey 
+    # response3=requests.get(trendingpersonurl)
+    # trendingperson = response3.json()
+    context = {
+        "trendingmovies":trendingmovies,
+        "trendingtv":trendingtv,
+        # "trendingperson":trendingperson,
+    }
+    return render(request, 'trending_week.html', context)
+
+

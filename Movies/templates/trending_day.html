@@ -7,14 +7,14 @@
 
 
         <div class="">
-          
+         
             <div class="">
                 <br>
-                <h5 class="section-title">Popular Movies</h5>
+                <h5 class="section-title">Movies</h5>
                 
                 <div class="scroller">
                   
-                     {% for movie in popular.results %} 
+                     {% for movie in trendingmovies.results %} 
                      <a href="{% url 'details' movie.id %}" class="anchor-text">
                     
         
@@ -35,10 +35,10 @@
 
             <div class="">
                 <br>
-                <h5 class="section-title">Now Playing Movies</h5>
+                <h5 class="section-title">TV Shows</h5>
                 <div class="scroller">
                   
-                    {% for movie in now_playing.results %}
+                    {% for movie in trendingtv.results %}
                     <a href="{% url 'details' movie.id %}" class="anchor-text">
         
                         <div class="card pr-4 scroller-item" style="width: 14rem; height: 21rem;">
@@ -55,12 +55,15 @@
                 </div>
             </div>
 
+            {% comment %}
+            
+
             <div class="">
                 <br>
-                <h5 class="section-title">Upcoming</h5>
+                <h5 class="section-title">People</h5>
                 <div class="scroller">
                   
-                    {% for movie in upcoming.results %}
+                    {% for movie in trendingperson.results %}
                     <a href="{% url 'details' movie.id %}" class="anchor-text">
         
                         <div class="card pr-4 scroller-item" style="width: 14rem; height: 21rem;">
@@ -76,27 +79,8 @@
                 
                 </div>
             </div>
-            <div class="">
-                <br>
-                <h5 class="section-title">Animations</h5>
-                <div class="scroller">
-                  
-                    {% for movie in animations.results %}
-                    <a href="{% url 'details' movie.id %}" class="anchor-text">
-        
-                        <div class="card pr-4 scroller-item" style="width: 14rem; height: 21rem;">
-                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" style="width: 180px; height: 240px; border-radius: 10px;" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title">{{ movie.title }}</h6>
-                                <p class="card-text">Release: {{ movie.release_date }}</p>
-                                
-                            </div>
-                        </div>  
-                    </a>
-                    {% endfor %}
-                
-                </div>
-            </div>
+            {% endcomment %}
+          
             <br>
 
 
