@@ -13,38 +13,53 @@ categories = responseCategory.json()
 
 
 def getMovies(request):
-    # popular movies
+    if request.method=="GET":
+        
+        # popular movies
 
-    urlPopular = BASE_URL + "popular" + apiKey
-    response1 = requests.get(urlPopular)
-    popular = response1.json()
-    print(popular)
+        urlPopular = BASE_URL + "popular" + apiKey
+        response1 = requests.get(urlPopular)
+        popular = response1.json()
+        print(popular)
 
-    # Now Playing movies
-    urlNowPlaying = BASE_URL + "now_playing" + apiKey
-    response2 = requests.get(urlNowPlaying)
-    now_playing = response2.json()
-    # print(now_playing)
+        # Now Playing movies
+        urlNowPlaying = BASE_URL + "now_playing" + apiKey
+        response2 = requests.get(urlNowPlaying)
+        now_playing = response2.json()
+        # print(now_playing)
 
-    # upcoming
-    urlUpcoming = BASE_URL + "upcoming" + apiKey
-    response3 = requests.get(urlUpcoming)
-    upcoming = response3.json()
+        # upcoming
+        urlUpcoming = BASE_URL + "upcoming" + apiKey
+        response3 = requests.get(urlUpcoming)
+        upcoming = response3.json()
 
-    # animations
-    DISCOVER_BASE_URL = "https://api.themoviedb.org/3/discover/movie"
-    urlAnimations = DISCOVER_BASE_URL + apiKey + "&with_genres=16"
-    response4 = requests.get(urlAnimations)
-    animations = response4.json()
-    # search functionality
+        # animations
+        DISCOVER_BASE_URL = "https://api.themoviedb.org/3/discover/movie"
+        urlAnimations = DISCOVER_BASE_URL + apiKey + "&with_genres=16"
+        response4 = requests.get(urlAnimations)
+        animations = response4.json()
+        # search functionality
+        
 
-    context = {
-        "popular": popular,
-        "now_playing": now_playing,
-        "upcoming": upcoming,
-        "animations": animations,
-        "categories": categories,
-    }
+        context = {
+            "popular": popular,
+            "now_playing": now_playing,
+            "upcoming": upcoming,
+            "animations": animations,
+            "categories": categories,
+        }
+    if request.method=='POST':
+        searchString = request.POST['search']
+        searchurl = 'https://api.themoviedb.org/3/search/movie'+apiKey+'&query='+searchString
+        searchResults= requests.get(searchurl).json()
+        print(searchResults)
+        
+
+
+        context={
+            "searchResults":searchResults,
+        }
+        
     return render(request, "index.html", context)
 
 
@@ -141,5 +156,7 @@ def getTrendingWeek(request):
         # "trendingperson":trendingperson,
     }
     return render(request, 'trending_week.html', context)
+
+
 
 

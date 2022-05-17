@@ -94,12 +94,12 @@
         </div>
         <div class="row search-area" >
                 
-          <form action="" method="get">
+          <form action="{% url 'getmovies' %}" method="post">
               {% csrf_token %}
               <div><p class="search-area-title ">Explore</p></div>
               <div><p class="search-area-text">thousands of movies, Tv shows, Series and Documentaries......</p></div>
               <div class="search-bar-wrapper">                       
-                  <input type="text" class="search-bar" placeholder="Search movies, tv shows and Documentaries">
+                  <input type="text" name="search" class="search-bar" placeholder="Search movies, tv shows and Documentaries">
                   <button type="submit" class="button">Search</button>
               </div>
           </form>
