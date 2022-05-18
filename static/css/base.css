@@ -147,6 +147,20 @@ a {
   white-space: nowrap;
   overflow-y: hidden;
 }
+.scroller1 {
+  padding: auto;
+  padding-left: 100px;
+  
+  
+  
+}
+.scroller-item1 {
+  display: inline-block;
+
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
 
 
 .scroller-item {

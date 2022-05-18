@@ -33,8 +33,8 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="#">Movies</a>
-                  <a href="#">Tv Shows</a>
+                  <a href="{% url 'popular_movies' %}">Movies</a>
+                  <a href="{% url 'popular_tv' %}">Tv Shows</a>
                   <a href="{% url 'get_animations' %}">Animations</a>
                 </div>
               </div>
@@ -84,9 +84,9 @@
                   
                 </button>
                 <div class="dropdown-content">
-                  <a href="#">Movies</a>
-                  <a href="#">Tv Shows</a>
-                  <a href="#">Animations</a>
+                  <a href="{% url 'videoTrailers' %}">Movies</a>
+                  <a href="{% url 'videoTrailers' %}">Tv Shows</a>
+                  <a href="{% url 'videoTrailers' %}">Animations</a>
                 </div>
               </div>
           </div> 

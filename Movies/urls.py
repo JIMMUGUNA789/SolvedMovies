@@ -9,4 +9,9 @@ urlpatterns = [
     path('popular/animations/',views.getAnimations, name='get_animations'),
     path('trending/day/', views.getTrendingDay, name='trending_day'),
     path('trending/week/', views.getTrendingWeek, name='trending_week'),
+    path('popular/movies/', views.popularMovies, name='popular_movies'),
+    path('popular/tvshows/', views.popularTvShows, name='popular_tv'),
+    path('detailsTv/<int:id>/', views.detailsTv, name='detailsTv'),
+    path('trailers/', views.videoTrailers, name='videoTrailers')
+
 ]
