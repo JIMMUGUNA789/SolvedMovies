@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -130,3 +131,6 @@ STATIC_ROOT = "static-root"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 API_KEY = '?api_key=e963d5906fb1e697a29b91384f06a477'
+
+
+django_heroku.settings(locals())
