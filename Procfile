@@ -1,2 +1,2 @@
 
-web: gunicorn --bind 0.0.0.0:$PORT SolvedMovies:app
+web: gunicorn SolvedMovies.wsgi:application --log-file - --log-level debug
