@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div style="padding: 30px;">
+    <h5>Trailers</h5>
+{% for trailer in seasonTrailers.results %}
+
+{% if trailer.key %}
+
+<object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/{{trailer.key}}?version=3"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/{{trailer.source}}?version=3" 
+    type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390"></object>
+{% else %}
+<p>No trailers available</p>
+{% endif %}
+{% endfor%}
+</div>
+{% endblock %}

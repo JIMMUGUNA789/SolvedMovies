@@ -94,18 +94,43 @@
           </div> 
 
         </div>
-        <div class="row search-area" >
+        <div class="row contact-us search-area" >
                 
-          <form action="{% url 'getmovies' %}" method="post">
-              {% csrf_token %}
-              <div><p class="search-area-title ">Explore</p></div>
-              <div><p class="search-area-text">thousands of movies, Tv shows, Series and Documentaries......</p></div>
-              <div class="search-bar-wrapper">                       
-                  <input type="text" name="search" class="search-bar" placeholder="  Search movies, tv shows and Documentaries">
-                  <button type="submit" class="button">Search</button>
-              </div>
-          </form>
+         <h2>Contact Us</h2>
 
+      </div>
+      <div class="row center-text"><h3>Let's Start a Conversation</h3></div>
+      <div class="row">
+        <div class="col-lg-6 outer-form">
+            <p>Send us an email today:</p>
+            <p>solvedltd@gmail.com</p>
+            <p>Phone:</p>
+            <p>0729825703</p>
+            <p><a href=""><i class="fa fa-facebook" style="font-size:20px;color:#07152b"></i></a>
+                <a href=""><i class="fa fa-instagram" style="font-size:20px;color:#07152b"></i></a>
+                <a href=""><i class="fa fa-whatsapp" style="font-size:20px;color:#07152b"></i></a>
+                <a href=""><i class="fa fa-facebook" style="font-size:20px;color:#07152b"></i></a></p>
+
+        </div>
+          <div class="col-lg-6 outer-form">
+              <div class="form">
+              <p>Please note all fields are required.</p>
+              <form action="" method="POST">
+                  {% csrf_token %}
+                  <label for="name">Full Name:</label><br>
+                  <input type="text" name="email" class="input-field" required><br>
+                  <label for="email">Email:</label><br>
+                  <input type="email" name="email" class="input-field" required><br>
+                  <label for="phone-number">Phone No.:</label><br>
+                  <input type="tel" name="phone-number" class="input-field" required><br>
+                  <label for="message">Message:</label><br>
+                  <textarea name="message" id="" cols="" rows="10" class="input-field"></textarea><br>
+                  <button type="submit" class="form-btn">Send</button>
+              </form>
+            </div>
+           
+
+          </div>
       </div>
       
 
@@ -120,17 +145,16 @@
       <div class="row main-navv">
         <div class="icon-div">
 
-        <a href=""><i class="fa fa-facebook" style="font-size:20px;color:white"></i></a>
-          <a href=""><i class="fa fa-instagram" style="font-size:20px;color:white"></i></a>
-          <a href=""><i class="fa fa-whatsapp" style="font-size:20px;color:white"></i></a>
-          <a href=""><i class="fa fa-envelope" style="font-size:20px;color:white"></i></a>
-        </div>
-        <p class="footer-tagline">"Watching a movie for the first time is a flirt. Rewatching it, is a date"~ Guillermo del Toro</p>
-        
-        
-          <p class="footer-text">Copyright@2022| Designed and Created by Jim</p>
-            
+          <a href=""><i class="fa fa-facebook" style="font-size:20px;color:white"></i></a>
+            <a href=""><i class="fa fa-instagram" style="font-size:20px;color:white"></i></a>
+            <a href=""><i class="fa fa-whatsapp" style="font-size:20px;color:white"></i></a>
+            <a href=""><i class="fa fa-envelope" style="font-size:20px;color:white"></i></a>
+          </div>
+          <p class="footer-tagline">"Watching a movie for the first time is a flirt. Rewatching it, is a date"~ Guillermo del Toro</p>
           
+          
+            <p class="footer-text">Copyright@2022| Designed and Created by Jim</p>
+              
 
         </div>
         

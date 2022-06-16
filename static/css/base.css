@@ -8,6 +8,15 @@ body {
   background-image: linear-gradient(to right, #07152b, #1c51a6);
   
 }
+.main-navv {
+  background-image: linear-gradient(to right, #1c51a6, #07152b);
+  
+}
+.footer-text{
+  text-align: center;
+  color: white;
+  font-size: small;
+}
 .nav-header {
   color: white;
   padding-top: 14px;
@@ -113,6 +122,14 @@ a {
   height: 300px;
   padding: 20px;
 }
+.search-area1 {
+  background-image: url("/static/moviebackground.jpg");
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  height: 300px;
+  padding: 20px;
+}
 .search-area-title {
   color: white;
   padding-left: 150px;
@@ -190,8 +207,67 @@ a {
 .detail-div{
   display: flex;
 }
+.contact-us{
+  color: white;
+  text-align: center;
+  padding: 150px;
+  
+}
+.center-text{
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 20px;
+}
+.form{
+  border-radius: 5px;
+  background-color: #f3f6fa;
+  padding: 20px;
+}
+.input-field{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #07152b;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form-btn{
+  width: 100%;
+  background-image: linear-gradient(to right, #1c51a6, #07152b); 
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: large;
+}
+.form-btn:hover{
+  background-image: linear-gradient(to right,  #07152b, #1c51a6); 
 
+}
+.outer-form{
+  padding: 40px;
+}
+.season-title{
+  font-weight: bolder;
+}
+.icon-div{
+  padding-left: 480px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  width: 100%;
+}
+.icon-div a{
+  padding: 40px;
+}
+.footer-tagline{
+  color: white;
+  font-style: italic;
+  text-align: center;
 
-
-
+}
 

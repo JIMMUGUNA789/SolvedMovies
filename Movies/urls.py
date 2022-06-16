@@ -12,6 +12,9 @@ urlpatterns = [
     path('popular/movies/', views.popularMovies, name='popular_movies'),
     path('popular/tvshows/', views.popularTvShows, name='popular_tv'),
     path('detailsTv/<int:id>/', views.detailsTv, name='detailsTv'),
-    path('trailers/', views.videoTrailers, name='videoTrailers')
+    path('trailers/', views.videoTrailers, name='videoTrailers'),
+    path('tvseasons/<int:id>/', views.getSeasons, name='getSeasons'),
+    path('contact/', views.contactUs, name='contact_us'),
+    path('tvseasons/<int:id1>/<int:id2>/', views.getSeasonTrailers, name='get_season_trailers'),
 
 ]

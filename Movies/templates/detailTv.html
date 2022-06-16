@@ -8,7 +8,7 @@
        
 
             <div class=" detail-div1" style="width: 14rem; height: 21rem;">
-                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{tvDetail.poster_path}}" style="width: 18rem; height: 28rem; border-radius: 10px;" alt="Card image cap">
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{tvDetail.poster_path}}" style="width: 18rem; height: 28rem; border-radius: 10px;" alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
             
             
         </div>
@@ -20,7 +20,7 @@
                 <span>{{genre.name}}</span>
                 {% endfor %}
             </p>
-            <p class="search-area-text">Rating: {{tvDetail.vote_average}} | <a href="#" style="color: goldenrod;"><span  ><i class="fa fa-play" style="font-size:16px;color:goldenrod"></i>Play Trailer</span></a></p>
+            <p class="search-area-text">Rating: {{tvDetail.vote_average}} | <a href="{% url 'getSeasons' tvDetail.id %}" style="color: goldenrod;"><span  >All Seasons</span></a></p>
             <p class="search-area-text">Seasons: {{tvDetail.number_of_seasons}} | Episodes: {{tvDetail.number_of_episodes}}</p>
             <p class="search-area-text">{{tvDetail.tagline}} </p>
             <h4 class="search-area-text">Overview:</h4>
@@ -42,7 +42,7 @@
         
 
             <div class="card pr-4 scroller-item" style="width: 12rem; height: 18rem;">
-                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{detail.profile_path}}" style="width: 150px; height: 200px; border-radius: 10px;" alt="Card image cap">
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{detail.profile_path}}" style="width: 150px; height: 200px; border-radius: 10px;" alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
                 <div class="card-body">
                     <h6 class="card-title">{{detail.name}}</h6>
                     <p class="card-text">{{ detail.character }}</p>

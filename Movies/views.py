@@ -20,7 +20,7 @@ def getMovies(request):
         urlPopular = BASE_URL + "popular" + apiKey
         response1 = requests.get(urlPopular)
         popular = response1.json()
-        print(popular)
+        
 
         # Now Playing movies
         urlNowPlaying = BASE_URL + "now_playing" + apiKey
@@ -62,7 +62,7 @@ def getMovies(request):
             + searchString
         )
         searchResults = requests.get(searchurl).json()
-        print(searchResults)
+        
 
         context = {
             "searchResults": searchResults,
@@ -108,7 +108,7 @@ def trailer(request, id):
     url = BASE_URL + strId + apiKey + "&append_to_response=trailers"
     trailer = requests.get(url)
     trailers = trailer.json()
-    print(trailers)
+    
     context = {
         "trailers": trailers,
     }
@@ -191,6 +191,7 @@ def detailsTv(request, id):
     urlDetail = 'https://api.themoviedb.org/3/tv/'+ strId + apiKey
     response = requests.get(urlDetail)
     tvDetail = response.json()
+    
 
     # get cast
     urlCast =  'https://api.themoviedb.org/3/tv/' + strId + "/credits" + apiKey
@@ -203,6 +204,33 @@ def detailsTv(request, id):
         
     }
     return render(request, "detailTv.html", context)
+# get all seasons
+def getSeasons(request, id):
+    strId = str(id)
+    urlDetail = 'https://api.themoviedb.org/3/tv/'+ strId + apiKey
+    response = requests.get(urlDetail)
+    tvDetail = response.json()
+    
+    context = {
+        "tvDetail":tvDetail,
+    }
+    return render(request, 'allSeasons.html', context)
+#get season trailers
+def getSeasonTrailers(request, id1, id2):
+    tv_id = str(id1)
+    season_number = str(id2)
+    url = 'https://api.themoviedb.org/3/tv/' + tv_id + '/season/' + season_number + '/videos' +apiKey
+    response = requests.get(url)
+    seasonTrailers = response.json()
+    context = {
+        "seasonTrailers":seasonTrailers
+    }
+    return render(request, 'season-trailer.html', context)
 
+
+    
 def videoTrailers(request):
     return render(request, 'coming_soon.html')
+
+def contactUs(request):
+    return render(request, 'contact_us.html')

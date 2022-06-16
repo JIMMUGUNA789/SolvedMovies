@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<h3 class="season-title">{{tvDetail.name}}</h3>
+{% for season in tvDetail.seasons %}
+
+<div class="row detail-background"  >
+    <div class="detail-div">
+       
+
+            <div class=" detail-div1" style="width: 14rem; height: 21rem;">
+                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{season.poster_path}}" style="width: 18rem; height: 28rem; border-radius: 10px;" alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
+            
+            
+        </div>
+        
+        <div class="">
+           
+            
+            
+            <p class="search-area-title"><a href="#">{{season.name}}</a></p>
+            <p class="search-area-text"> Air date: {{season.air_date}}               
+            </p>
+            <p class="search-area-text"> <a href="{% url 'get_season_trailers' id1=tvDetail.id id2=season.season_number %}" style="color: goldenrod;"><span  >Play Trailers</span></a></p>
+            <p class="search-area-text">Episodes: {{season.episode_count}}</p>
+          
+            <h4 class="search-area-text">Overview:</h4>
+            {% if season.overview %}
+            <p class="search-area-text">{{season.overview}}</p>
+            {% else %}
+            <p class="search-area-text">{{tvDetail.overview}}</p>
+            {%  endif %}
+          
+            
+        </div>
+    
+
+    </div>
+</div>
+{% endfor %}
+
+
+
+
+
+
+{% endblock %}
