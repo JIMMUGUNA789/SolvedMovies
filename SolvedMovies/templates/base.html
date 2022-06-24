@@ -18,8 +18,10 @@
     <div class="">
         <div class="row main-nav">
         <div class="col-lg-2 nav-header"><h5>COMP340Movies</h5></div>
-        <div class="navbar1 col-lg-10">
-            
+        <div class="navbar1 col-lg-10" id="myTopnav">
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars" style="font-size:40px;color:white"></i>
+          </a>
             <a href="#sign_up" class="active"><i class="fa fa-user" style="font-size:16px;color:white"></i> Sign Up</a>
             <a href="{% url 'contact_us' %}">Contact Us</a>
             

@@ -1,7 +1,10 @@
-from multiprocessing import context
-from django.shortcuts import render
+
+
+from django.shortcuts import render, redirect
 from django.conf import settings
 import requests
+from .models import Feedback
+from django.contrib import messages
 
 apiKey = settings.API_KEY
 BASE_URL = "https://api.themoviedb.org/3/movie/"
@@ -231,6 +234,19 @@ def getSeasonTrailers(request, id1, id2):
     
 def videoTrailers(request):
     return render(request, 'coming_soon.html')
-
+# send Feedback
 def contactUs(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        message = request.POST.get('message')
+        Feedback.objects.create(name=name, email=email, phone_number=phone_number, message=message)
+        return redirect('contact_us')
+    messages.success(request, 'Thank you for your message. we will get in touch soon')
+
+        
     return render(request, 'contact_us.html')
+
+
+

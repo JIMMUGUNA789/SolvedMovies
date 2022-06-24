@@ -15,6 +15,7 @@
     <title>SolvedMovies</title>
 </head>
 <body>
+
     <div class="">
         <div class="row main-nav">
         <div class="col-lg-2 nav-header"><h5>COMP340Movies</h5></div>
@@ -101,36 +102,53 @@
       </div>
       <div class="row center-text"><h3>Let's Start a Conversation</h3></div>
       <div class="row">
+        <div class="col-lg-1"></div>
         <div class="col-lg-6 outer-form">
-            <p>Send us an email today:</p>
-            <p>solvedltd@gmail.com</p>
-            <p>Phone:</p>
+          <h5>Send us your feedback:</h5>
+            <p>Your feedback and reccomendations help us to improve your experience</p>
+            <h5>Donate:</h5>
+            <p>Your donations help us keep the platform free and accessible to all. Contact us to learn how you can do this</p>
             <p>0729825703</p>
-            <p><a href=""><i class="fa fa-facebook" style="font-size:20px;color:#07152b"></i></a>
-                <a href=""><i class="fa fa-instagram" style="font-size:20px;color:#07152b"></i></a>
-                <a href=""><i class="fa fa-whatsapp" style="font-size:20px;color:#07152b"></i></a>
-                <a href=""><i class="fa fa-facebook" style="font-size:20px;color:#07152b"></i></a></p>
+            <h5>Share:</h5>
+            <p>You can also share the platform with your friends on all social media platforms.</p>
+            <p><a href="" style="padding: 10px;"><i class="fa fa-facebook" style="font-size:20px;color:#07152b "></i></a>
+                <a href="" style="padding: 10px;"><i class="fa fa-instagram" style="font-size:20px;color:#07152b"></i></a>
+                <a href="" style="padding: 10px;"><i class="fa fa-whatsapp" style="font-size:20px;color:#07152b"></i></a>
+                <a href="" style="padding: 10px;"><i class="fa fa-facebook" style="font-size:20px;color:#07152b"></i></a></p>
+            <div id="googleMap" style="width:100%;height: 330px;"></div>
 
         </div>
-          <div class="col-lg-6 outer-form">
+          <div class="col-lg-4 outer-form" style="border-left: 2px solid black;">
               <div class="form">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                  
+                  {% endfor %}
+                {% endif %}
               <p>Please note all fields are required.</p>
-              <form action="" method="POST">
+              <form action="{% url 'contact_us' %}" method="POST" style="display: inline;">
                   {% csrf_token %}
                   <label for="name">Full Name:</label><br>
-                  <input type="text" name="email" class="input-field" required><br>
+                  <input type="text" name="name" class="input-field" size="50" required><br>
                   <label for="email">Email:</label><br>
                   <input type="email" name="email" class="input-field" required><br>
                   <label for="phone-number">Phone No.:</label><br>
-                  <input type="tel" name="phone-number" class="input-field" required><br>
+                  <input type="tel" name="phone_number" class="input-field" required><br>
                   <label for="message">Message:</label><br>
-                  <textarea name="message" id="" cols="" rows="10" class="input-field"></textarea><br>
+                  <textarea name="message" id="" cols="" rows="6" class="input-field"></textarea><br>
                   <button type="submit" class="form-btn">Send</button>
               </form>
             </div>
            
 
           </div>
+          <div class="col-lg-1"></div>
       </div>
       
 
@@ -167,6 +185,23 @@
     </div>
     
 
+    <script>
+      function myMap() {
+      var mapProp= {
+        center:new google.maps.LatLng(-0.023559,37.906193),
+        zoom:5,
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      var marker = new google.maps.Marker({
+  position:new google.maps.LatLng(-0.281490,36.078419),
+  animation:google.maps.Animation.BOUNCE
+});
+
+marker.setMap(map); 
+      }
+      </script>
+      
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSCtcubOp6w7GGLA9HASMQkFQVyT_EwTE&callback=myMap"></script>
 
 
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
