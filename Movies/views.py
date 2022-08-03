@@ -5,6 +5,8 @@ from django.conf import settings
 import requests
 from .models import Feedback
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 
 apiKey = settings.API_KEY
 BASE_URL = "https://api.themoviedb.org/3/movie/"
@@ -240,8 +242,20 @@ def contactUs(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone_number = request.POST.get('phone_number')
-        message = request.POST.get('message')
-        Feedback.objects.create(name=name, email=email, phone_number=phone_number, message=message)
+        feedbackmessage = request.POST.get('message')
+        Feedback.objects.create(name=name, email=email, phone_number=phone_number, message=feedbackmessage)
+        # send email
+        # subject = "Solved Movies feedback"
+        # message = {
+        #     "name":name,
+        #     "email":email,
+        #     "phone_number":phone_number,
+        #     "feedback_message":feedbackmessage,
+            
+        # }
+        # email_from = settings.EMAIL_HOST_USER
+        # recipient_list = [settings.EMAIL_HOST_USER,]
+        # send_mail(subject, message, email_from, recipient_list)
         return redirect('contact_us')
     messages.success(request, 'Thank you for your message. we will get in touch soon')
 

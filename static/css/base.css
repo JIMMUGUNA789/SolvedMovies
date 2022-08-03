@@ -110,7 +110,8 @@ a {
 }
 .card {
   box-shadow: 0 8px 12px 0 #1c51a6;
-  width: 35%;
+  width: 14rem;
+  height: 21rem;
   border-radius: 10px 10px 10px 10px;
 }
 
@@ -281,6 +282,53 @@ a {
     float: right;
     display: block;
   }
+  .card{
+    width: 10rem;
+    height: 14rem;
+  }
+  .card-img-top{
+    width: 130px !important;
+    height: 180px !important;
+    border-radius: 10px !important;
+    padding-top: 0px !important;
+  }
+  .scroller-item{
+    padding-top: 5px !important;
+    padding-bottom: 10px !important;
+
+  }
+ .card-title{
+  font-size: small !important;
+  padding-top: 0px !important;
+
+ }
+ .card-text{
+  display: none !important;
+ }
+ .section-title{
+  padding-left: 10px;
+  padding-bottom: 7px;
+  font-size: 15px;
+  font-weight: bold;
+ }
+ .search-area{
+  height: 250px;
+  padding: 10px;
+ }
+ .search-area-title{
+  padding-left: 10px;
+  font-size: 30px;
+  padding-bottom: 1px;
+ }
+ .search-area-text{
+  padding-left: 10px;
+  padding-top: 0px;
+  font-size: large;
+ }
+ .icon-div a{
+  padding: 0px !important;
+}
+ 
 }
 @media screen and (max-width: 600px) {
   .navbar1.responsive {position: relative;}
@@ -301,4 +349,14 @@ a {
     width: 100%;
     text-align: left;
   }
+}
+.card-img-top{
+  width: 180px;
+  height: 240px;
+  border-radius: 10px;
+}
+.card-title{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
