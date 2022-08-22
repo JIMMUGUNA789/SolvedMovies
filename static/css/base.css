@@ -205,12 +205,45 @@ a {
   
   
 }
+.detail-background-episodes {
+  background-image: linear-gradient(to right, #1c51a6, #07152b);  
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+  height:200px;
+  
+  
+}
+
 .detail-div{
   display: flex;
 }
+.detail-div-episodes{
+  display: flex;
+}
 .detail-div1{
-  width: 14rem;
-  height: 21rem;
+  width: 11rem;
+  height: 17rem;
+}
+.detail-div1-episodes{
+  width: 9rem !important;
+  height: 9rem !important;
+}
+.detail-div1-img{
+  width: 15rem;
+  height: 24rem;
+  border-radius: 10px;
+}
+.detail-div1-img-episodes{
+  width: 16rem !important;
+  height: 10rem !important;
+  border-radius: 10px;
+}
+.search-area-title-episodes{
+  color: white;
+  padding-left: 150px;
+  font-size: 20px;
+  padding-bottom: 2px;
 }
 .contact-us{
   color: white;
@@ -257,6 +290,12 @@ a {
 }
 .season-title{
   font-weight: bolder;
+  
+}
+.season-title-episodes{
+  font-weight: bolder;
+  padding-left: 20px;
+  
 }
 .icon-div{
   padding-left: 480px;
@@ -345,6 +384,7 @@ a {
 }
 .detail-div{
   display: block;
+  padding: 10px;
 }
 .detail-div1{
   width: 100% !important;
@@ -364,6 +404,19 @@ object{
 embed{
   width: 340px !important;
   height: 190px !important;
+}
+.season-title{
+  padding-left: 10px;
+}
+.detail-div1{
+  height: 21rem !important;
+  width: 21rem !important;
+  
+
+}
+.detail-div1-img{
+  height:20rem !important;
+  width: 20rem !important;
 }
  
 }

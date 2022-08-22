@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<h3 class="season-title-episodes">{{episodes.name}}</h3>
+{% for episode in episodes.episodes %}
+
+<div class="row detail-background-episodes"  >
+    <div class="detail-div-episodes" style="padding-top: 0px !important;">
+       
+
+            <div class=" detail-div1-episodes" style="background-image: url('static/default-movie.jpg');" >
+                <img class="card-img-top detail-div1-img-episodes" src="https://image.tmdb.org/t/p/w500{{episode.still_path}}"   onerror="this.src='static/default-movie.jpg';">
+            
+            
+        </div>
+        
+        <div class="">
+           
+            
+            
+           <p class="search-area-title-episodes"><a href="#">{{episode.episode_number}}. {{episode.name}}</a></p>         
+           
+            {% if episode.overview %}
+            <p class="search-area-text">{{episode.overview}}</p>
+            {% else %}
+            <p class="search-area-text">{{tvDetail.overview}}</p>
+            {%  endif %}
+          
+            
+        </div>
+    
+
+    </div>
+    <br>
+    <hr style="border: 2px solid white;">
+</div>
+{% endfor %}
+
+
+
+
+
+
+{% endblock %}

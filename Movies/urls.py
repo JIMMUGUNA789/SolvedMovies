@@ -16,6 +16,7 @@ urlpatterns = [
     path('tvseasons/<int:id>/', views.getSeasons, name='getSeasons'),
     path('contact/', views.contactUs, name='contact_us'),
     path('tvseasons/<int:id1>/<int:id2>/', views.getSeasonTrailers, name='get_season_trailers'),
+    path('tvseasons/episodes/<int:tvid>/<int:seasonnumber>/', views.getEpisodes, name='episodes'),
     
 
 ]

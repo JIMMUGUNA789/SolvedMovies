@@ -13,6 +13,7 @@ BASE_URL = "https://api.themoviedb.org/3/movie/"
 
 # get all categories
 urlCategories = "https://api.themoviedb.org/3/genre/movie/list" + apiKey
+
 responseCategory = requests.get(urlCategories)
 categories = responseCategory.json()
 
@@ -222,6 +223,7 @@ def getSeasons(request, id):
     return render(request, 'allSeasons.html', context)
 #get season trailers
 def getSeasonTrailers(request, id1, id2):
+
     tv_id = str(id1)
     season_number = str(id2)
     url = 'https://api.themoviedb.org/3/tv/' + tv_id + '/season/' + season_number + '/videos' +apiKey
@@ -231,7 +233,16 @@ def getSeasonTrailers(request, id1, id2):
         "seasonTrailers":seasonTrailers
     }
     return render(request, 'season-trailer.html', context)
-
+def getEpisodes(request,tvid, seasonnumber):
+    seasonnumber = str(seasonnumber)
+    tvid = str(tvid)
+    urlDetail = 'https://api.themoviedb.org/3/tv/'+ tvid + "/season/" +seasonnumber + apiKey
+    response = requests.get(urlDetail)
+    episodes = response.json()
+    context={
+        "episodes":episodes,
+    }
+    return render(request, 'episodes.html', context)
 
     
 def videoTrailers(request):

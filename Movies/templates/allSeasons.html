@@ -6,11 +6,11 @@
 {% for season in tvDetail.seasons %}
 
 <div class="row detail-background"  >
-    <div class="detail-div">
+    <div class="detail-div" style="padding-top: 0px !important;">
        
 
-            <div class=" detail-div1" style="width: 14rem; height: 21rem;">
-                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{season.poster_path}}" style="width: 18rem; height: 28rem; border-radius: 10px;" alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
+            <div class=" detail-div1" >
+                <img class="card-img-top detail-div1-img" src="https://image.tmdb.org/t/p/w500{{season.poster_path}}"  alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
             
             
         </div>
@@ -19,10 +19,10 @@
            
             
             
-            <p class="search-area-title"><a href="#">{{season.name}}</a></p>
+            <p class="search-area-title"><a href="{% url 'episodes' tvid=tvDetail.id seasonnumber=season.season_number %}">{{season.name}}</a></p>
             <p class="search-area-text"> Air date: {{season.air_date}}               
             </p>
-            <p class="search-area-text"> <a href="{% url 'get_season_trailers' id1=tvDetail.id id2=season.season_number %}" style="color: goldenrod;"><span  >Play Trailers</span></a></p>
+            <p class="search-area-text"> <a href="{% url 'get_season_trailers' id1=tvDetail.id id2=season.season_number %}" style="color: goldenrod;"><span><i class="fa fa-play" style="font-size:16px;color:goldenrod"></i>Play Trailers</span></a></p>
             <p class="search-area-text">Episodes: {{season.episode_count}}</p>
           
             <h4 class="search-area-text">Overview:</h4>
@@ -37,6 +37,8 @@
     
 
     </div>
+    <br>
+    <hr style="border: 2px solid white;">
 </div>
 {% endfor %}
 
