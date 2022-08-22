@@ -7,8 +7,8 @@
     <div class="detail-div">
        
 
-            <div class=" detail-div1" style="width: 14rem; height: 21rem;">
-                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{movieDetail.poster_path}}" style="width: 18rem; height: 28rem; border-radius: 10px;" alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
+            <div class="detail-div1" >
+                <img class="card-img-top-detail" src="https://image.tmdb.org/t/p/w500{{movieDetail.poster_path}}" alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
             
             
         </div>
@@ -41,11 +41,13 @@
          
         
 
-            <div class="card pr-4 scroller-item" style="width: 12rem; height: 18rem;">
-                <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{detail.profile_path}}" style="width: 150px; height: 200px; border-radius: 10px;" alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
+            <div class="card pr-4 scroller-item" >
+                <div style="background-image: url('static/default-movie.jpg');">
+                <img class="card-img-top" width="180" height="240" src="https://image.tmdb.org/t/p/w500{{detail.profile_path}}"  alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
+            </div>
                 <div class="card-body">
                     <h6 class="card-title">{{detail.name}}</h6>
-                    <p class="card-text">{{ detail.character }}</p>
+                    <p class="card-text-detail">{{ detail.character }}</p>
                     
                 </div>
             </div> 
