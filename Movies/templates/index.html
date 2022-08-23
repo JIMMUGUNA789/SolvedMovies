@@ -128,7 +128,7 @@
             <div class="">
                 <br>
                 <h5 class="section-title">Search Results</h5>
-                
+                <h5 class="section-title">Movies</h5>
                 <div class="scroller">
                   
                      {% for movie in searchResults.results %} 
@@ -147,6 +147,29 @@
                     {% endfor %}
                 
                 </div>
+
+               <div>
+                <br>
+                <h5 class="section-title">Tv Shows</h5>
+                <div class="scroller">
+                  
+                    {% for show in searchResultsTv.results %} 
+                    <a href="{% url 'details' show.id %}" class="anchor-text">
+                   
+       
+                       <div class="card pr-4 scroller-item" >
+                           <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{show.poster_path}}" style="width: 180px; height: 240px; border-radius: 10px;" alt="Card image cap" onerror="this.src='static/default-movie.jpg';">
+                           <div class="card-body">
+                               <h6 class="card-title">{{ show.name }}</h6>
+                               <p class="card-text">Release: {{ show.first_air_date }}</p>
+                               
+                           </div>
+                       </div> 
+                   </a> 
+                   {% endfor %}
+               
+               </div>
+               </div>
             
             </div>
             {%  endif %}

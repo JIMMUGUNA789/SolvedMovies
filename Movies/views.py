@@ -67,11 +67,19 @@ def getMovies(request):
             + "&query="
             + searchString
         )
+        searchurlTv = (
+            "https://api.themoviedb.org/3/search/tv"
+            + apiKey
+            + "&query="
+            + searchString
+        )
         searchResults = requests.get(searchurl).json()
+        searchResultsTv = requests.get(searchurlTv).json()
         
 
         context = {
             "searchResults": searchResults,
+            "searchResultsTv":searchResultsTv,
         }
 
     return render(request, "index.html", context)
