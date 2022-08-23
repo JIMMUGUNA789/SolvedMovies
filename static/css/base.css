@@ -375,15 +375,23 @@ a {
   padding-top: 0px;
   font-size: large;
  }
+ .icon-div{
+  padding-left: 20px;
+  padding-right: 0px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  align-items: center;
+  width: 100%;
+}
+
  .icon-div a{
-  padding: 0px !important;
+  padding-left:25px !important;
 }
 .detail-background {
   background-image: linear-gradient(to right, #1c51a6, #07152b);  
   padding: 7px;
   padding-left: 25px;
-  height:auto;
-  
+  height:auto;  
   
 }
 .detail-div{
@@ -422,7 +430,33 @@ embed{
   height:20rem !important;
   width: 20rem !important;
 }
- 
+.detail-div-episodes{
+  display: block;
+  padding-bottom: 2px;
+  
+}
+.detail-div1-episodes{
+  width: 21rem !important;
+  height: 9rem !important;
+}
+.detail-div1-img-episodes{
+  width: 21rem !important;
+  
+  height: 10rem !important;
+  border-radius: 10px;
+  padding-bottom: 2px;
+}
+.detail-background-episodes{
+  height: auto !important;
+
+}
+.search-area-title-episodes{
+  padding-top: 30px;
+  
+}
+ .search-area-title-episodes{
+  padding-left: 90px;
+ }
 }
 @media screen and (max-width: 600px) {
   .navbar1.responsive {position: relative;}

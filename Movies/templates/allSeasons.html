@@ -23,7 +23,7 @@
             <p class="search-area-text"> Air date: {{season.air_date}}               
             </p>
             <p class="search-area-text"> <a href="{% url 'get_season_trailers' id1=tvDetail.id id2=season.season_number %}" style="color: goldenrod;"><span><i class="fa fa-play" style="font-size:16px;color:goldenrod"></i>Play Trailers</span></a></p>
-            <p class="search-area-text">Episodes: {{season.episode_count}}</p>
+            <p class="search-area-text"> <a href="{% url 'episodes' tvid=tvDetail.id seasonnumber=season.season_number %}"> Episodes: {{season.episode_count}} </a></p>
           
             <h4 class="search-area-text">Overview:</h4>
             {% if season.overview %}
@@ -41,7 +41,6 @@
     <hr style="border: 2px solid white;">
 </div>
 {% endfor %}
-
 
 
 
