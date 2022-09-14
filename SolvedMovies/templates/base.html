@@ -13,9 +13,9 @@
     <script src="{% static 'js/base.js' %}"></script> 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1155296088390494"
      crossorigin="anonymous"></script>
-     <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('rndskittytor.com',5344919,document.createElement('script'))</script> 
+     <!-- <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('rndskittytor.com',5344919,document.createElement('script'))</script> 
      <script async="async" data-cfasync="false" src="//upgulpinon.com/1?z=5344920"></script>
-     <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('oaphoace.net',5344921,document.createElement('script'))</script>
+     <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('oaphoace.net',5344921,document.createElement('script'))</script> -->
     <title>SolvedMovies</title>
 </head>
 <body>
@@ -26,8 +26,10 @@
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars" style="font-size:40px;color:white"></i>
           </a>
+          {% comment %}
             <a href="#sign_up" class="active"><i class="fa fa-user" style="font-size:16px;color:white"></i> Sign Up</a>
             <a href="{% url 'contact_us' %}">Contact Us</a>
+            {% endcomment %}
             
             <div class="dropdown1">
               <a class="dropbtn" href="{% url 'getmovies' %}">Home
@@ -85,6 +87,7 @@
                   
                 </div>
               </div>
+              {% comment %}
 
               <div class="dropdown1">
                 <button class="dropbtn">Trailers
@@ -97,6 +100,7 @@
                   <a href="{% url 'videoTrailers' %}">Animations</a>
                 </div>
               </div>
+              {% endcomment %}
           </div> 
 
         </div>
